@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(255, 252, 248);
+    text-align: center;
+}
+.todo-wrapper{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px 20px;
+}
+.todo-item{
+    background-color: rgb(125, 221, 176);
+    border-radius: 20px;
+    padding: 10px;
+}
+p{
+    font-size: 30px;
+}
+form{
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 20px;
+    width: 100%;
+}
+input{
+    height: 30px;
+    width: 80%;
+}
