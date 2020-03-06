@@ -19,17 +19,19 @@ const App = () => {
       <h1>To-do list in React using Hooks</h1>
       <div className="todo-wrapper">
         {array.map(item => <div className="todo-item">
-              <p>{item}</p>
-              <button
-              className="ui red button"
-                onClick={() => {
-                  array = array.filter(e => e !== item)
-                  setArray(array)
-                }}
-              >
-                Delete
-              </button>
-            </div>
+          <p>{item}</p>
+          <button
+            className="ui red button"
+            onClick={() => {
+              array = array.filter(e => e !== item)
+              setArray(array)
+            }}
+          >
+            <i class="material-icons">
+              delete
+            </i>
+          </button>
+        </div>
         )}
       </div>
       <form onSubmit={(e) => { handleSubmit(e) }}>
