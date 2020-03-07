@@ -30,7 +30,7 @@ const App = () => {
           state.array.map((item) => {
             return (
               <div className="todo-item">
-                <p>{item}</p>
+                <p>{item} № <strong>{state.array.length - state.array.indexOf(item)}</strong></p>
                 <button
                   className="ui red button"
                   onClick={() => {
