@@ -17,7 +17,7 @@ const App = () => {
     e.preventDefault()
     setState({
       text: '',
-      array: [state.text, ...state.array]
+      array: [...state.array,state.text]
     })
   }
 
@@ -30,15 +30,18 @@ const App = () => {
           state.array.map((item) => {
             return (
               <div className="todo-item">
-                <p>{item} № <strong>{state.array.length - state.array.indexOf(item)}</strong></p>
+                <p>{item} № <strong>{state.array.indexOf(item) + 1}</strong></p>
                 <button
                   className="ui red button"
                   onClick={() => {
-                    state.array = state.array.filter(e => e !== item)
-                    setState({
-                      text: state.text,
-                      array: state.array
-                    })
+                    const shouldDelete = window.confirm('Are you sure you want to delete?')
+                    if (shouldDelete) {
+                      state.array = state.array.filter(e => e !== item)
+                      setState({
+                        text: state.text,
+                        array: state.array
+                      })
+                    }
                   }}
                 >
                   <i class="material-icons">
